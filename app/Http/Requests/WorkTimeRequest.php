@@ -2,12 +2,12 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 use App\Traits\GeneralTrait;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
-class PermissionRoleRequest extends FormRequest
+class WorkTimeRequest extends FormRequest
 {
     use GeneralTrait;
 
@@ -20,13 +20,15 @@ class PermissionRoleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|string',
-            'role'=>'required|string'
+            'task'=>'required|integer',
+            'start'=>'required',
+            'pause'=>'required',
+            'end'=>'required',
+            'finish'=>'required',
         ];
     }
 
     public function failedValidation(Validator $validator)
-
     {
         throw new HttpResponseException($this->returnValidationError('E001',$validator));
 

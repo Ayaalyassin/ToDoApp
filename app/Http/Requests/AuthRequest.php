@@ -28,11 +28,7 @@ class AuthRequest extends FormRequest
     public function messages(): array
     {
         return [
-            /*'email.required' => 'Email is required.',
-            'email.email' => 'Enter a valid email address.',
-            'email.unique' => 'The email is already in use.',
-            'password.required' => 'Password is required.',
-            'name.required'=>'Name is required.'*/
+
         ];
     }
     public function failedValidation(Validator $validator)

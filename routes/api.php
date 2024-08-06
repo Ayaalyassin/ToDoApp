@@ -54,9 +54,9 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::group(['prefix' => 'profiles'], function () {
         Route::get('', [ProfileController::class, 'index']);
         Route::post('', [ProfileController::class, 'store']);
-        Route::post('/{id}', [ProfileController::class, 'update']);
+        Route::post('/update', [ProfileController::class, 'update']);
         Route::get('{id}', [ProfileController::class, 'show']);
-        Route::delete('{id}', [ProfileController::class, 'destroy']);
+        Route::delete('delete', [ProfileController::class, 'destroy']);
     });
 
     Route::group(['prefix' => 'projects'], function () {

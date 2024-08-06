@@ -13,26 +13,15 @@ use Illuminate\Support\Str;
 class RoleController extends Controller
 {
     use GeneralTrait;
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $roles = Role::all();
         return $this->returnData('roles', $roles);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
 
@@ -43,9 +32,7 @@ class RoleController extends Controller
         return $this->returnData('role', $role);
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show($id)
     {
         $role = Role::find($id);
@@ -55,17 +42,7 @@ class RoleController extends Controller
             return $this->returnError("", "not found");
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Role $role)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request,$id)
     {
         $role =Role::find($id);
@@ -80,9 +57,7 @@ class RoleController extends Controller
             return $this->returnError("", "not found");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy($id)
     {
         $role = Role::find($id);
